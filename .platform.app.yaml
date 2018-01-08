@@ -1,0 +1,34 @@
+# This file describes an application. You can have multiple applications
+# in the same project.
+#
+# See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
+
+# The name of this app. Must be unique within a project.
+name: 'app'
+
+# The runtime the application uses.
+type: 'python:3.5'
+
+# The build-time dependencies of the app.
+dependencies:
+    python:
+       rasa_core: '*'
+       rasa_nlu: '*'
+
+# The configuration of app when it is exposed to the web.
+web:
+    # Commands are run once after deployment to start the application process.
+    commands:
+       start: "python -m rasa_nlu.server -e wit -P $PORT &"
+
+    locations:
+        # The folder from which to serve static assets, for this location.
+        #
+        # This is a filesystem path, relative to the application root.
+        "/":
+            root: "public"
+            passthru: true
+            expires: 1h
+
+# The size of the persistent disk of the application (in MB).
+disk: 512
