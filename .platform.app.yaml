@@ -33,4 +33,4 @@ web:
 # The size of the persistent disk of the application (in MB).
 disk: 512
 mounts:
-   "/log": "shared:files/logs"
+   "/logs": "shared:files/logs"
