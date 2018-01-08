@@ -1,6 +1,8 @@
-# Python template for Platform.sh
+# RASA.ai very unofficial template for Platform.sh
 
-This project provides a starter kit for Python projects hosted on Platform.sh using uwsgi. It is primarily an example, although could be used as the starting point for a real project.
+This project provides a starter kit for RASA.ai projects hosted on Platform.sh It is primarily an example, although could be used as the starting point for a real project.
+
+No training has been tried.
 
 ## Starting a new project
 
