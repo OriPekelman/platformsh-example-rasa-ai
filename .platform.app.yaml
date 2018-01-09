@@ -19,7 +19,7 @@ dependencies:
 web:
     # Commands are run once after deployment to start the application process.
     commands:
-       start: "python -m rasa_nlu.server -e wit -P $PORT &"
+       start: "python -m rasa_nlu.server -e wit -P $PORT"
 
     locations:
         # The folder from which to serve static assets, for this location.
