@@ -17,10 +17,11 @@ dependencies:
 hooks:
   build: |
       if [ ! -f data/total_word_feature_extractor.dat ]; then
-      cwd=$(pwd)
-      cd /tmp
+        cwd=$(pwd)
+        cd /tmp
         wget https://github.com/mit-nlp/MITIE/releases/download/v0.4/MITIE-models-v0.2.tar.bz2
         tar jxf MITIE-models-v0.2.tar.bz2
+        mkdir -p $cwd/data
         mv MITIE-models/english/total_word_feature_extractor.dat $cwd/data/total_word_feature_extractor.dat
       fi
     
@@ -28,11 +29,10 @@ hooks:
 web:
     # Commands are run once after deployment to start the application process.
     commands:
-       start: "python -m rasa_nlu.server -e wit -P $PORT &"
+       start: "python -m rasa_nlu.server -e wit -P $PORT -c config.json"
 
 # The size of the persistent disk of the application (in MB).
 disk: 4000
 mounts:
    "/logs": "shared:files/logs"
-   "/data": "shared:files/data"
    "/projects": "shared:files/projects"
