@@ -1,8 +1,6 @@
 # RASA.ai very unofficial template for Platform.sh
 
-OK we need to control the number of processes this thing is going  to spawn .. or everything will go boom.
-
-And cool: https://github.com/paschmann/rasa-ui
+And cool: https://github.com/paschmann/rasa-ui we should later try a multi-app with this.
 
 This project provides a starter kit for RASA.ai projects hosted on Platform.sh It is primarily an example, although could be used as the starting point for a real project.
 
